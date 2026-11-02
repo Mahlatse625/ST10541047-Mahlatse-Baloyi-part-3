@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student Stay SA helps students explore accommodation options near Rosebank, Auckland Park and Braamfontein with Student Stay SA.">
+    <meta
+    name="keywords"
+    content="student accommodation Johannesburg, Rosebank accommodation, UJ accommodation, Wits accommodation"
+>
+
+<meta name="robots" content="index, follow">
+    <title>Listings | Student Stay SA</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Leaflet Map CSS -->
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+>
+</head>
+
+<body>
+    <!-- Leaflet Map JavaScript -->
+<script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+</script>
+
+<!-- Student Stay SA JavaScript -->
+<script src="assets/js/script.js"></script>
+
+</body>
+</html>
+    <script src="assets/js/script.js"></script>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="index.html">Student Stay SA</a>
+            <nav aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a class="" href="index.html">Home</a></li>
+                    <li><a class="active" href="listings.html">Listings</a></li>
+                    <li><a class="" href="about.html">About Us</a></li>
+                    <li><a class="" href="enquiry.html">Enquiry</a></li>
+                    <li><a class="" href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="page-banner">
+            <div class="container">
+                <h1>Student Accommodation Listings</h1>
+                <p>Browse example accommodation options near Johannesburg campuses.</p>
+            </div>
+        </section>
+        <!-- Accommodation Search and Filter -->
+        <section class="listing-tools">
+            <div class="container">
+
+                <h2>Find Student Accommodation</h2>
+
+                <label for="listingSearch">Search accommodation:</label>
+                <input type="search" id="listingSearch" placeholder="Search by name or location">
+
+                <label for="locationFilter">Filter by location:</label>
+                <select id="locationFilter">
+                    <option value="all">All Locations</option>
+                    <option value="rosebank">Rosebank</option>
+                    <option value="auckland park">Auckland Park</option>
+                    <option value="braamfontein">Braamfontein</option>
+                </select>
+
+                <label for="priceSort">Sort by price:</label>
+                <select id="priceSort">
+                    <option value="default">Default</option>
+                    <option value="low-high">Lowest Price First</option>
+                    <option value="high-low">Highest Price First</option>
+                </select>
+
+                <p id="listingResults"></p>
+
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="cards" id="listingContainer">
+                    <article class="card" data-listing data-name="Rosebank Student Accommodation"
+                        data-location="rosebank" data-price="3500">
+                        <button type="button" class="image-trigger" data-lighbox aria-label="Enlarge Rosebank Accommodation image">
+                    
+                        <img
+                            src="https://images.pexels.com/photos/19814644/pexels-photo-19814644.jpeg"
+                            alt="Bedroom with a single bed"></button>
+                        <div class="card-content">
+                            <h3>Rosebank Student Residence</h3>
+                            <p><strong>Location:</strong> Rosebank, Johannesburg</p>
+                            <p class="price">R3,500 per month</p>
+                            <ul class="features">
+                                <li>Student-friendly room</li>
+                                <li>Study space</li>
+                                <li>Convenient campus area</li>
+                            </ul><a class="button" href="enquiry.html">Enquire</a>
+                        </div>
+                    </article>
+                    <article class="card" data-listing data-name="UJ Student Accommodation" data-location="auckland park"
+                        data-price="3000">
+                        <button type="button" class="image-trigger" data-lighbox aria-label="Enlarge Rosebank Accommodation image">
+                        <img
+                            src="https://images.pexels.com/photos/20725943/pexels-photo-20725943.jpeg"
+                            alt="Bedroom with a bed and desk in an apartment"></button>
+                        <div class="card-content">
+                            <h3>UJ Campus Rooms</h3>
+                            <p><strong>Location:</strong> Auckland Park, Johannesburg</p>
+                            <p class="price">R3,000 per month</p>
+                            <ul class="features">
+                                <li>Study area</li>
+                                <li>Student-focused accommodation</li>
+                                <li>Near the UJ area</li>
+                            </ul><a class="button" href="enquiry.html">Enquire</a>
+                        </div>
+                    </article>
+                    <article class="card" data-listing data-name="Wits Student Accommodation"
+                        data-location="braamfontein" data-price="3800">
+                        <button type="button" class="image-trigger" data-lighbox aria-label="Enlarge Rosebank Accommodation image">
+                        <img
+                            src="https://images.pexels.com/photos/25568746/pexels-photo-25568746.jpeg"
+                            alt="Bedroom with a bed, desk and television"></button>
+                        <div class="card-content">
+                            <h3>Wits Student Accommodation</h3>
+                            <p><strong>Location:</strong> Braamfontein, Johannesburg</p>
+                            <p class="price">R3,800 per month</p>
+                            <ul class="features">
+                                <li>Bedroom and study desk</li>
+                                <li>Student-friendly location</li>
+                                <li>Near the Wits area</li>
+                            </ul><a class="button" href="enquiry.html">Enquire</a>
+                        </div>
+                    </article>
+                </div>
+                <div class="note">Prices and accommodation information are illustrative for this academic project and
+                    should be independently verified before real-world use.</div>
+            </div>
+            <!-- PART 3 - INTERACTIVE MAP -->
+<section class="map-section">
+
+    <div class="container">
+
+        <h2>Student Accommodation Areas</h2>
+
+        <p>
+            Explore the areas near the campuses featured
+            on Student Stay SA.
+        </p>
+
+        <div id="accommodationMap"></div>
+
+    </div>
+
+</section>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>&copy; 2026 Student Stay SA. Academic project.</p>
+            <p><a href="contact.html">Contact Student Stay SA</a></p>
+
+      <div
+    id="imageLightbox"
+    class="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Enlarged accommodation image"
+    hidden
+>
+    <button
+        type="button"
+        class="lightbox-close"
+        data-lightbox-close
+        aria-label="Close enlarged image"
+    >
+        &times;
+    </button>
+
+    <img id="lightboxImage" src="" alt="">
+
+    <p id="lightboxCaption"></p>
+</div>     
+
+    <button
+        type="button"
+        class="lightbox-close"
+        data-lightbox-close
+        aria-label="Close enlarged image"
+    >
+        &times;
+    </button>
+
+    <img
+        id="lightboxImage"
+        src=""
+        alt=""
+    >
+
+    <p id="lightboxCaption"></p>
+        </div>
+    </footer>
+</body>
+
+</html>
